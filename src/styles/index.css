@@ -10,3 +10,20 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.reloj{
+     height: 100px;
+     width :100px;
+}
+.container{
+    background-color: black;
+    color: aliceblue;
+}
+.segundos {
+    font-size: xx-large;
+}
+.minutos{
+    font-size: xx-large;
+}
+.horas{
+    font-size: xx-large;
+}
