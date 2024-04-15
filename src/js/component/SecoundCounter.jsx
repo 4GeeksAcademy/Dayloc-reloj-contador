@@ -8,6 +8,7 @@ const Counter=(props)=>{
             <div className="col"><p className="horas">{props.horas}</p></div> 
             <div className="col"><p className="minutos">{props.minutos}</p></div>
             <div className="col" ><p className="segundos">{props.segundos}</p></div>
+            
         </div>
 
     )
