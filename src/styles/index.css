@@ -17,13 +17,19 @@
 .container{
     background-color: black;
     color: aliceblue;
+ 
+
 }
 .segundos {
     font-size: xx-large;
+    
 }
 .minutos{
     font-size: xx-large;
 }
 .horas{
     font-size: xx-large;
+}
+.boton{
+    background-color: bisque;
 }

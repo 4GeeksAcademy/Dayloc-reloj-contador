@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Counter from "./SecoundCounter";
 import { useState } from "react";
 
+
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
@@ -10,37 +11,47 @@ import rigoImage from "../../img/rigo-baby.jpg";
 const Home = () => {
   const [segundos, setSegundos] = useState(0);
   const[minutos,setMinutos]  = useState(0);
-  let horas = 0;
+  const[horas,setHoras]  = useState(0);
  
   
   useEffect(() => {
     setInterval(() => {
       
-      setSegundos((preSegundos)=>preSegundos===59 ? 0 : preSegundos+1);
-     
-      
+      setSegundos((preSegundos)=> preSegundos===60 ? 0 : preSegundos+1);
+           
     }, 1000);
+    
     
 
   }, []);
  
+  
   useEffect(() => {
-    setInterval(() => {
+  
       
-      setMinutos((preMinutos)=> preMinutos===59 ? 0 : preMinutos+1 );
-      console.log(minutos)
+    setMinutos((minutos) => segundos===60 ? minutos+1 : minutos && minutos>59 ? minutos=0 : minutos)
       
-    }, 60000);
+  
+
     
 
-  }, [
-    
-  ]);
- 
+},[segundos]);
+useEffect(() => {
+  
+      
+  setHoras((horas) => minutos===60 ? horas+1 : horas && horas>=24 ? horas=0 : horas)
+
+
+  
+
+},[minutos]);
+
+
 
   return (
     <div className="container">
       <Counter segundos={segundos} minutos={minutos} horas={horas} />
+      
     </div>
   );
 
